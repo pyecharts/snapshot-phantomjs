@@ -4,13 +4,28 @@
 import os
 import sys
 import codecs
+import locale
+import platform
 from shutil import rmtree
 
 from setuptools import Command, setup, find_packages
 
-from platform import python_implementation
 PY2 = sys.version_info[0] == 2
 PY26 = PY2 and sys.version_info[1] < 7
+PY33 = sys.version_info < (3, 4)
+
+# Work around mbcs bug in distutils.
+# http://bugs.python.org/issue10945
+# This work around is only if a project supports Python < 3.4
+
+# Work around for locale not being set
+try:
+    lc = locale.getlocale()
+    pf = platform.system()
+    if pf != 'Windows' and lc == (None, None):
+        locale.setlocale(locale.LC_ALL, 'C.UTF-8')
+except (ValueError, UnicodeError, locale.Error):
+    locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
 NAME = 'snapshot-phantomjs'
 AUTHOR = 'C.W.'
@@ -21,7 +36,7 @@ DESCRIPTION = (
     'Render pyecharts as image via phantomjs'
 )
 URL = 'https://github.com/pyecharts/snapshot-phantomjs'
-DOWNLOAD_URL = '%s/archive/0.0.0.tar.gz' % URL
+DOWNLOAD_URL = '%s/archive/0.0.1.tar.gz' % URL
 FILES = ['README.rst', 'CHANGELOG.rst']
 KEYWORDS = [
     'python',
@@ -49,8 +64,8 @@ EXTRAS_REQUIRE = {}
 # You do not need to read beyond this line
 PUBLISH_COMMAND = '{0} setup.py sdist bdist_wheel upload -r pypi'.format(
     sys.executable)
-GS_COMMAND = ('gs snapshot-phantomjs v0.0.0 ' +
-              "Find 0.0.0 in changelog for more details")
+GS_COMMAND = ('gs snapshot-phantomjs v0.0.1 ' +
+              "Find 0.0.1 in changelog for more details")
 NO_GS_MESSAGE = ('Automatic github release is disabled. ' +
                  'Please install gease to enable it.')
 UPLOAD_FAILED_MSG = (
@@ -159,6 +174,7 @@ def filter_out_test_code(file_handle):
 
 if __name__ == '__main__':
     setup(
+        test_suite="tests",
         name=NAME,
         author=AUTHOR,
         version=VERSION,

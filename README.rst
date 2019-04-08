@@ -16,7 +16,15 @@ snapshot-phantomjs
 Installation
 ================================================================================
 
-You can get it:
+
+You can install snapshot-phantomjs via pip:
+
+.. code-block:: bash
+
+    $ pip install snapshot-phantomjs
+
+
+or clone it and install it:
 
 .. code-block:: bash
 
