@@ -27,6 +27,7 @@ def make_snapshot(
     file_type: str,
     pixel_ratio: int = 2,
     delay: int = 2,
+    **_
 ):
     chk_phantomjs()
     logger.info(MESSAGE_GENERATING)
