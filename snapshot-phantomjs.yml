@@ -1,12 +1,24 @@
+overrides: pyecharts.yml
 name: "snapshot-phantomjs"
-organisation: "pyecharts"
-author: "C.W."
-contact: "info@pyecharts.com"
-company: "pyecharts dev team"
-version: "0.0.1"
-current_version: "0.0.1"
+version: "0.0.2"
+current_version: "0.0.2"
 release: "0.0.1"
 copyright_year: 2019
 license: MIT
+nodocs: true
+min_python_version: "3.5"
 dependencies: []
 description: "Render pyecharts as image via phantomjs"
+releases:
+- changes:
+  - action: update
+    details:
+    - proper releases
+  version: 0.0.2
+  date: 01.04.2019
+- changes:
+  - action: first release
+    details:
+    - use selenium driver for rendering pyecharts output as image
+  version: 0.0.1
+  date: 09.04.2019
