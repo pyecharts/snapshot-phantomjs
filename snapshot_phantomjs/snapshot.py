@@ -1,8 +1,8 @@
 import io
-import os
-import sys
-import subprocess
 import logging
+import os
+import subprocess
+import sys
 
 logger = logging.getLogger(__name__)
 
@@ -23,11 +23,7 @@ MESSAGE_NO_PHANTOMJS = "No phantomjs found in your PATH. Please install it!"
 
 
 def make_snapshot(
-    html_path: str,
-    file_type: str,
-    pixel_ratio: int = 2,
-    delay: int = 2,
-    **_
+    html_path: str, file_type: str, pixel_ratio: int = 2, delay: int = 2, **_
 ):
     chk_phantomjs()
     logger.info(MESSAGE_GENERATING)
