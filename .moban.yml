@@ -14,7 +14,6 @@ configuration:
 targets:
   - README.rst: CUSTOM_README.rst.jj2
   - setup.py: pyecharts_setup.py.jj2
-  - requirements.txt: requirements.txt.jj2
   - "tests/requirements.txt": "tests/pyecharts_requirements.txt.jj2"
   - test.sh: test.script.jj2
   - "snapshot_phantomjs/_version.py": "_version.py.jj2"
