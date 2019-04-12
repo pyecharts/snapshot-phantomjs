@@ -13,9 +13,9 @@ releases:
 - changes:
   - action: update
     details:
-    - proper releases
+    - official release
   version: 0.0.2
-  date: 01.04.2019
+  date: 12.04.2019
 - changes:
   - action: first release
     details:
