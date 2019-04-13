@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 
+# Template by pypi-mobans
 import codecs
 import locale
-
-# Template by pypi-mobans
 import os
 import platform
 import sys
@@ -25,22 +24,25 @@ except (ValueError, UnicodeError, locale.Error):
     locale.setlocale(locale.LC_ALL, "en_US.UTF-8")
 
 NAME = "snapshot-phantomjs"
-AUTHOR = "C.W."
-VERSION = "0.0.1"
+AUTHOR = "pyecharts dev team"
+VERSION = "0.0.2"
 EMAIL = "info@pyecharts.com"
 LICENSE = "MIT"
 DESCRIPTION = "Render pyecharts as image via phantomjs"
 URL = "https://github.com/pyecharts/snapshot-phantomjs"
-DOWNLOAD_URL = "%s/archive/0.0.1.tar.gz" % URL
-FILES = ["README.md"]
+DOWNLOAD_URL = "%s/archive/0.0.2.tar.gz" % URL
+FILES = ["README.rst", "CHANGELOG.rst"]
+KEYWORDS = ["python", "pyecharts", "chart"]
 
 CLASSIFIERS = [
     "Topic :: Software Development :: Libraries",
     "Programming Language :: Python",
     "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.5",
     "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
 ]
 
 INSTALL_REQUIRES = []
@@ -50,14 +52,20 @@ SETUP_COMMANDS = {}
 PACKAGES = find_packages(exclude=["ez_setup", "examples", "tests"])
 EXTRAS_REQUIRE = {}
 # You do not need to read beyond this line
-PUBLISH_COMMAND = "{0} setup.py sdist bdist_wheel upload -r pypi".format(sys.executable)
+PUBLISH_COMMAND = "{0} setup.py sdist bdist_wheel upload -r pypi".format(
+    sys.executable
+)
 GS_COMMAND = (
-    "gs snapshot-phantomjs v0.0.1 " + "Find 0.0.1 in changelog for more details"
+    "gs snapshot-phantomjs v0.0.2 "
+    + "Find 0.0.2 in changelog for more details"
 )
 NO_GS_MESSAGE = (
-    "Automatic github release is disabled. " + "Please install gease to enable it."
+    "Automatic github release is disabled. "
+    + "Please install gease to enable it."
 )
-UPLOAD_FAILED_MSG = 'Upload failed. please run "%s" yourself.' % PUBLISH_COMMAND
+UPLOAD_FAILED_MSG = (
+    'Upload failed. please run "%s" yourself.' % PUBLISH_COMMAND
+)
 HERE = os.path.abspath(os.path.dirname(__file__))
 
 
@@ -171,6 +179,7 @@ if __name__ == "__main__":
         download_url=DOWNLOAD_URL,
         long_description=read_files(*FILES),
         license=LICENSE,
+        keywords=KEYWORDS,
         extras_require=EXTRAS_REQUIRE,
         tests_require=["nose"],
         install_requires=INSTALL_REQUIRES,
