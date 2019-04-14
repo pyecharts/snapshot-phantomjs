@@ -52,20 +52,14 @@ SETUP_COMMANDS = {}
 PACKAGES = find_packages(exclude=["ez_setup", "examples", "tests"])
 EXTRAS_REQUIRE = {}
 # You do not need to read beyond this line
-PUBLISH_COMMAND = "{0} setup.py sdist bdist_wheel upload -r pypi".format(
-    sys.executable
-)
+PUBLISH_COMMAND = "{0} setup.py sdist bdist_wheel upload -r pypi".format(sys.executable)
 GS_COMMAND = (
-    "gs snapshot-phantomjs v0.0.2 "
-    + "Find 0.0.2 in changelog for more details"
+    "gs snapshot-phantomjs v0.0.2 " + "Find 0.0.2 in changelog for more details"
 )
 NO_GS_MESSAGE = (
-    "Automatic github release is disabled. "
-    + "Please install gease to enable it."
+    "Automatic github release is disabled. " + "Please install gease to enable it."
 )
-UPLOAD_FAILED_MSG = (
-    'Upload failed. please run "%s" yourself.' % PUBLISH_COMMAND
-)
+UPLOAD_FAILED_MSG = 'Upload failed. please run "%s" yourself.' % PUBLISH_COMMAND
 HERE = os.path.abspath(os.path.dirname(__file__))
 
 
