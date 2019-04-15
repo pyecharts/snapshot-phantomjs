@@ -5,7 +5,7 @@ test:
 
 format:
 	isort -rc .
-	black -l 79 .
+	black .
 
 lint:
 	make lint

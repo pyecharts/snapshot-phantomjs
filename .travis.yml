@@ -34,8 +34,6 @@ jobs:
 
 stage: test
 
-script: make test
-
 before_install:
   - if [[ -f min_requirements.txt && "$MINREQ" -eq 1 ]]; then
       mv min_requirements.txt requirements.txt ;

@@ -10,7 +10,7 @@ PHANTOMJS_EXEC = "phantomjs"
 
 
 def make_snapshot(
-    html_path: str, file_type: str, pixel_ratio: int = 2, delay: int = 2, **_
+    html_path: str, file_type: str, delay: int = 2, pixel_ratio: int = 2, **_
 ):
     chk_phantomjs()
     logger.info("Generating file ...")
