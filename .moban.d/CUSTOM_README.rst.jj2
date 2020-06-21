@@ -1,1 +1,4 @@
 {% extends 'README.rst.jj2' %}
+
+{% block documentation_link %}
+{% endblock %}

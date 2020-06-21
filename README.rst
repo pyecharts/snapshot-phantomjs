@@ -7,10 +7,15 @@ snapshot-phantomjs
 
 .. image:: https://codecov.io/github/pyecharts/snapshot-phantomjs/coverage.png
    :target: https://codecov.io/github/pyecharts/snapshot-phantomjs
+.. image:: https://badge.fury.io/py/snapshot-phantomjs.svg
+   :target: https://pypi.org/project/snapshot-phantomjs
 
+.. image:: https://pepy.tech/badge/snapshot-phantomjs/month
+   :target: https://pepy.tech/project/snapshot-phantomjs/month
 
-.. image:: https://readthedocs.org/projects/snapshot-phantomjs/badge/?version=latest
-   :target: http://snapshot-phantomjs.readthedocs.org/en/latest/
+.. image:: https://img.shields.io/github/stars/pyecharts/snapshot-phantomjs.svg?style=social&maxAge=3600&label=Star
+    :target: https://github.com/pyecharts/snapshot-phantomjs/stargazers
+
 
 
 Installation
