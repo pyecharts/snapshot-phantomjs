@@ -1,8 +1,8 @@
 overrides: pyecharts.yml
 name: "snapshot-phantomjs"
-version: "0.0.2"
-current_version: "0.0.2"
-release: "0.0.2"
+version: "0.0.3"
+current_version: "0.0.3"
+release: "0.0.3"
 copyright_year: 2019
 license: MIT
 nodocs: true
@@ -10,6 +10,12 @@ min_python_version: "3.5"
 dependencies: []
 description: "Render pyecharts as image via phantomjs"
 releases:
+- changes:
+  - action: update
+    details:
+    - Fix missing snapshot.js
+  version: 0.0.3
+  date: 15.04.2019
 - changes:
   - action: update
     details:
